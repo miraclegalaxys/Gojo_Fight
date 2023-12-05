@@ -1,0 +1,17 @@
+C:\project263OOP\Game\Gojo_Fight\Gojo_Fight\bin\Debug\net8.0-windows\Gojo_Fight.exe
+C:\project263OOP\Game\Gojo_Fight\Gojo_Fight\bin\Debug\net8.0-windows\Gojo_Fight.deps.json
+C:\project263OOP\Game\Gojo_Fight\Gojo_Fight\bin\Debug\net8.0-windows\Gojo_Fight.runtimeconfig.json
+C:\project263OOP\Game\Gojo_Fight\Gojo_Fight\bin\Debug\net8.0-windows\Gojo_Fight.dll
+C:\project263OOP\Game\Gojo_Fight\Gojo_Fight\bin\Debug\net8.0-windows\Gojo_Fight.pdb
+C:\project263OOP\Game\Gojo_Fight\Gojo_Fight\obj\Debug\net8.0-windows\Gojo_Fight.Form1.resources
+C:\project263OOP\Game\Gojo_Fight\Gojo_Fight\obj\Debug\net8.0-windows\Gojo_Fight.csproj.GenerateResource.cache
+C:\project263OOP\Game\Gojo_Fight\Gojo_Fight\obj\Debug\net8.0-windows\Gojo_Fight.GeneratedMSBuildEditorConfig.editorconfig
+C:\project263OOP\Game\Gojo_Fight\Gojo_Fight\obj\Debug\net8.0-windows\Gojo_Fight.AssemblyInfoInputs.cache
+C:\project263OOP\Game\Gojo_Fight\Gojo_Fight\obj\Debug\net8.0-windows\Gojo_Fight.AssemblyInfo.cs
+C:\project263OOP\Game\Gojo_Fight\Gojo_Fight\obj\Debug\net8.0-windows\Gojo_Fight.csproj.CoreCompileInputs.cache
+C:\project263OOP\Game\Gojo_Fight\Gojo_Fight\obj\Debug\net8.0-windows\Gojo_Fight.dll
+C:\project263OOP\Game\Gojo_Fight\Gojo_Fight\obj\Debug\net8.0-windows\refint\Gojo_Fight.dll
+C:\project263OOP\Game\Gojo_Fight\Gojo_Fight\obj\Debug\net8.0-windows\Gojo_Fight.pdb
+C:\project263OOP\Game\Gojo_Fight\Gojo_Fight\obj\Debug\net8.0-windows\Gojo_Fight.genruntimeconfig.cache
+C:\project263OOP\Game\Gojo_Fight\Gojo_Fight\obj\Debug\net8.0-windows\ref\Gojo_Fight.dll
+C:\project263OOP\Game\gojo_fight\Gojo_Fight\obj\Debug\net8.0-windows\Gojo_Fight.Properties.Resources.resources
