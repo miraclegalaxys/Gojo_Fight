@@ -68,6 +68,10 @@ namespace Gojo_Fight
         bool isAoMoving = false;
         bool isArkaMoving = false;
 
+        bool isShotaoVisible = true;
+        bool isShotarkaVisible = true;
+
+
         //bool kai = false;
         //bool hashi = false;
 
@@ -91,6 +95,9 @@ namespace Gojo_Fight
         System.Windows.Forms.Timer skillECooldownTimer;
         System.Windows.Forms.Timer skillRCooldownTimer;
         System.Windows.Forms.Timer blinkTimer;
+        //System.Windows.Forms.Timer shotaoVisibilityTimer;
+        //System.Windows.Forms.Timer shotarkaVisibilityTimer;
+
 
 
 
@@ -104,6 +111,7 @@ namespace Gojo_Fight
             ArkaShotMove();
             Skillcooldown();
             Blink();
+            //SetUpTimers();
 
             kai = Image.FromFile("sukuna\\2.png");
             kaiWidth = 400; 
@@ -160,17 +168,44 @@ namespace Gojo_Fight
                 e.Graphics.DrawImage(shotmurasaki, new Rectangle(shotmurasakiX, shotmurasakiY, shotmurasakiWidth, shotmurasakiHeight));
             }
 
-            if (isAoMoving)
+            if (isAoMoving && isShotaoVisible)
             {
                 e.Graphics.DrawImage(shotao, new Rectangle(shotaoX, shotaoY, shotaoWidth, shotaoHeight));
             }
 
-            if (isArkaMoving)
+            if (isArkaMoving && isShotarkaVisible)
             {
                 e.Graphics.DrawImage(shotarka, new Rectangle(shotarkaX, shotarkaY, shotarkaWidth, shotarkaHeight));
             }
 
         }
+
+
+        /*private void SetUpTimers()
+        {
+            shotaoVisibilityTimer = new System.Windows.Forms.Timer();
+            shotaoVisibilityTimer.Interval = 3000; // Example: 3 seconds
+            shotaoVisibilityTimer.Tick += ShotaoVisibilityTimer_Tick;
+
+            shotarkaVisibilityTimer = new System.Windows.Forms.Timer();
+            shotarkaVisibilityTimer.Interval = 3000; // Example: 3 seconds
+            shotarkaVisibilityTimer.Tick += ShotarkaVisibilityTimer_Tick;
+        }
+
+        private void ShotaoVisibilityTimer_Tick(object sender, EventArgs e)
+        {
+            isShotaoVisible = true;
+            shotaoVisibilityTimer.Stop();
+            Invalidate();
+        }
+
+        private void ShotarkaVisibilityTimer_Tick(object sender, EventArgs e)
+        {
+            isShotarkaVisible = true;
+            shotarkaVisibilityTimer.Stop();
+            Invalidate();
+        }*/
+
 
         private void MurasakiMoveTimer_Tick(object sender, EventArgs e)
         {
@@ -328,6 +363,7 @@ namespace Gojo_Fight
             gojoHP.Size = new Size(850, 30);
             gojoName.Size = new Size(190, 40);
 
+
             sukunaHP = new ProgressBar();
             sukunaName = new Label();
             sukunaFont = new Font("Arial", 12, FontStyle.Regular);
@@ -338,7 +374,7 @@ namespace Gojo_Fight
             sukunaName.Font = sukunaFont;
 
 
-            // Timer for increasing HP
+            
             System.Windows.Forms.Timer autoIncreaseSukunaTimer;
             autoIncreaseSukunaTimer = new System.Windows.Forms.Timer();
             autoIncreaseSukunaTimer.Interval = 2000; 
@@ -622,6 +658,8 @@ namespace Gojo_Fight
                 sukunaCurrentHp -= 5; 
                 if (sukunaCurrentHp < 0) sukunaCurrentHp = 0; 
                 sukunaHP.Value = sukunaCurrentHp;
+              //  isShotaoVisible = false;
+               // shotaoVisibilityTimer.Start();
             }
         }
 
@@ -634,6 +672,9 @@ namespace Gojo_Fight
                 sukunaCurrentHp -= 8; 
                 if (sukunaCurrentHp < 0) sukunaCurrentHp = 0; 
                 sukunaHP.Value = sukunaCurrentHp; 
+               // isShotarkaVisible = false;
+               // shotarkaVisibilityTimer.Start();
+
             }
         }
 
