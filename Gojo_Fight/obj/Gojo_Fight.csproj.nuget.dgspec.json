@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\project263OOP\\Game\\gojo_fight\\Gojo_Fight\\Gojo_Fight.csproj": {}
+    "C:\\project263OOP\\Game\\Gojo_Fight\\Gojo_Fight\\Gojo_Fight.csproj": {}
   },
   "projects": {
-    "C:\\project263OOP\\Game\\gojo_fight\\Gojo_Fight\\Gojo_Fight.csproj": {
+    "C:\\project263OOP\\Game\\Gojo_Fight\\Gojo_Fight\\Gojo_Fight.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\project263OOP\\Game\\gojo_fight\\Gojo_Fight\\Gojo_Fight.csproj",
+        "projectUniqueName": "C:\\project263OOP\\Game\\Gojo_Fight\\Gojo_Fight\\Gojo_Fight.csproj",
         "projectName": "Gojo_Fight",
-        "projectPath": "C:\\project263OOP\\Game\\gojo_fight\\Gojo_Fight\\Gojo_Fight.csproj",
+        "projectPath": "C:\\project263OOP\\Game\\Gojo_Fight\\Gojo_Fight\\Gojo_Fight.csproj",
         "packagesPath": "C:\\Users\\miracle\\.nuget\\packages\\",
-        "outputPath": "C:\\project263OOP\\Game\\gojo_fight\\Gojo_Fight\\obj\\",
+        "outputPath": "C:\\project263OOP\\Game\\Gojo_Fight\\Gojo_Fight\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

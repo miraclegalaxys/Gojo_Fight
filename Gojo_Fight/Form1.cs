@@ -106,10 +106,11 @@ namespace Gojo_Fight
             Blink();
 
             kai = Image.FromFile("sukuna\\2.png");
-            kaiWidth = 400; // Example: set width to 200 pixels
+            kaiWidth = 400; 
             kaiHeight = 400;
 
         }
+
 
         private void FormPaintEvent(object sender, PaintEventArgs e)
         {
@@ -118,9 +119,10 @@ namespace Gojo_Fight
             e.Graphics.DrawImage(sukuna, new Rectangle(sukunaX, sukunaY, sukunaWidth, sukunaHeight));
 
 
-            using (Font font = new Font("Arial", 24, FontStyle.Bold))
+            using (Font font = new Font("Arial", 50, FontStyle.Bold))
             {
-                using (SolidBrush brush = new SolidBrush(Color.Red))
+         
+                using (SolidBrush redBrush = new SolidBrush(Color.Red))
                 {
                     // Check Gojo's HP
                     if (gojoCurrentHp <= 0)
@@ -128,24 +130,28 @@ namespace Gojo_Fight
                         string gameOverText = "GAME OVER";
                         SizeF textSize = e.Graphics.MeasureString(gameOverText, font);
                         PointF textPosition = new PointF((this.ClientSize.Width - textSize.Width) / 2, (this.ClientSize.Height - textSize.Height) / 2);
-                        e.Graphics.DrawString(gameOverText, font, brush, textPosition);
+                        e.Graphics.DrawString(gameOverText, font, redBrush, textPosition);
                     }
+                }
 
+                
+                using (SolidBrush goldBrush = new SolidBrush(Color.Gold))
+                {
                     // Check Sukuna's HP
                     if (sukunaCurrentHp <= 0)
                     {
                         string winText = "WIN";
                         SizeF textSize = e.Graphics.MeasureString(winText, font);
                         PointF textPosition = new PointF((this.ClientSize.Width - textSize.Width) / 2, (this.ClientSize.Height - textSize.Height) / 2);
-                        e.Graphics.DrawString(winText, font, brush, textPosition);
+                        e.Graphics.DrawString(winText, font, goldBrush, textPosition);
                     }
                 }
             }
 
             if (showImage)
             {
-                int kaiPositionX = gojoX + (gojoWidth / 2) - (kaiWidth / 2); // Centered on gojo
-                int kaiPositionY = gojoY +120; // You can adjust this as needed
+                int kaiPositionX = gojoX + (gojoWidth / 2) - (kaiWidth / 2); 
+                int kaiPositionY = gojoY +120; 
                 e.Graphics.DrawImage(kai, new Rectangle(kaiPositionX, kaiPositionY, kaiWidth, kaiHeight));
             }
 
@@ -171,7 +177,7 @@ namespace Gojo_Fight
 
             if (isMurasakiMoving)
             {
-                shotmurasakiX += 30; // Adjust as needed
+                shotmurasakiX += 30; 
                 if (shotmurasakiX > this.Width)
                 {
                     isMurasakiMoving = false;
@@ -179,7 +185,7 @@ namespace Gojo_Fight
                 }
                 else
                 {
-                    CheckMurasakiHit(); // Check for collision
+                    CheckMurasakiHit(); 
                 }
                 Invalidate();
             }
@@ -229,26 +235,25 @@ namespace Gojo_Fight
             skillECooldownTimer.Stop();
             skillQCooldownTimer.Stop();
             skillWCooldownTimer.Stop();
-            // You can also add code here to indicate that the skill is ready again, such as updating the UI
         }
 
         private void BlinkTimer_Tick(object sender, EventArgs e)
         {
             if (gojoCurrentHp <= 0 || sukunaCurrentHp <= 0)
             {
-                // Optionally stop the timer
+                
                 ((System.Windows.Forms.Timer)sender).Stop();
                 return;
             }
-            // สลับค่า showImage และเรียก Invalidate เพื่อวาดภาพใหม่
+         
             showImage = !showImage;
-            Invalidate(); // บังคับให้เกิดการวาดภาพใหม่
+            Invalidate(); 
         }
 
         private void Blink()
         {
             blinkTimer = new System.Windows.Forms.Timer();
-            blinkTimer.Interval = 2000; // ตั้งค่าเป็น 1 วินาที
+            blinkTimer.Interval = 2000; 
             blinkTimer.Tick += BlinkTimer_Tick;
             blinkTimer.Start();
         }
@@ -271,7 +276,7 @@ namespace Gojo_Fight
         private void MurasakiShotMove()
         {
             murasakiMoveTimer = new System.Windows.Forms.Timer();
-            murasakiMoveTimer.Interval = 50; // Update every 50 milliseconds
+            murasakiMoveTimer.Interval = 50; 
             murasakiMoveTimer.Tick += MurasakiMoveTimer_Tick;
 
         }
@@ -279,7 +284,7 @@ namespace Gojo_Fight
         private void Skillcooldown()
         {
             skillRCooldownTimer = new System.Windows.Forms.Timer();
-            skillRCooldownTimer.Interval = 60000; // 10 seconds cooldown
+            skillRCooldownTimer.Interval = 60000; 
             skillRCooldownTimer.Tick += SkillCooldownTimer_Tick;
 
             skillECooldownTimer = new System.Windows.Forms.Timer();
@@ -307,14 +312,14 @@ namespace Gojo_Fight
             gojoName.Font = gojoFont;
 
             System.Windows.Forms.Timer gojoHPDecrementTimer = new System.Windows.Forms.Timer();
-            gojoHPDecrementTimer.Interval = 2000; // 1 second
+            gojoHPDecrementTimer.Interval = 2000; 
             gojoHPDecrementTimer.Tick += GojoHPDecrementTimer_Tick;
             gojoHPDecrementTimer.Start();
 
-            // Timer for increasing HP
+            
             System.Windows.Forms.Timer autoIncreaseGojoTimer;
             autoIncreaseGojoTimer = new System.Windows.Forms.Timer();
-            autoIncreaseGojoTimer.Interval = 1000; // 2 seconds
+            autoIncreaseGojoTimer.Interval = 1000; 
             autoIncreaseGojoTimer.Tick += AutoIncreaseTimer_Tick;
             autoIncreaseGojoTimer.Start();
 
@@ -336,7 +341,7 @@ namespace Gojo_Fight
             // Timer for increasing HP
             System.Windows.Forms.Timer autoIncreaseSukunaTimer;
             autoIncreaseSukunaTimer = new System.Windows.Forms.Timer();
-            autoIncreaseSukunaTimer.Interval = 2000; // 2 seconds
+            autoIncreaseSukunaTimer.Interval = 2000; 
             autoIncreaseSukunaTimer.Tick += AutoIncreaseTimer_Tick;
             autoIncreaseSukunaTimer.Start();
 
@@ -366,7 +371,6 @@ namespace Gojo_Fight
         {
             if (gojoCurrentHp <= 0 || sukunaCurrentHp <= 0)
             {
-                // Optionally stop the timer
                 ((System.Windows.Forms.Timer)sender).Stop();
                 return;
             }
@@ -380,7 +384,6 @@ namespace Gojo_Fight
         {
             if (gojoCurrentHp <= 0 || sukunaCurrentHp <= 0)
             {
-                // Optionally stop the timer
                 ((System.Windows.Forms.Timer)sender).Stop();
                 return;
             }
@@ -403,7 +406,7 @@ namespace Gojo_Fight
 
         private void IncrementGojoHealth(int increment)
         {
-            // Stop incrementing if the game is over or won
+
             if (gojoCurrentHp <= 0 || sukunaCurrentHp <= 0)
             {
                 return;
@@ -420,7 +423,7 @@ namespace Gojo_Fight
 
         private void SukunaReverse(int increment2)
         {
-            // Stop incrementing if the game is over or won
+
             if (sukunaCurrentHp <= 0 || gojoCurrentHp <= 0)
             {
                 return;
@@ -569,12 +572,12 @@ namespace Gojo_Fight
         private void ShootMurasaki()
         {
             shotmurasaki = Image.FromFile("gojo\\shotmurasaki.png");
-            shotmurasakiX = gojoX + gojoWidth + 0;
+            shotmurasakiX = gojoX + gojoWidth;
             shotmurasakiY = 200;
-            shotmurasakiWidth = 1000; // Set your desired width
-            shotmurasakiHeight = 1000; // Set your desired height
+            shotmurasakiWidth = 1000; 
+            shotmurasakiHeight = 1000; 
             isMurasakiMoving = true;
-            murasakiMoveTimer.Start(); // Start moving shotmurasaki
+            murasakiMoveTimer.Start(); 
         }
 
         private void ShootAo()
@@ -604,9 +607,9 @@ namespace Gojo_Fight
 
             if (collision)
             {
-                sukunaCurrentHp -= 15; // Reduce Sukuna's HP
-                if (sukunaCurrentHp < 0) sukunaCurrentHp = 0; // Prevent negative HP
-                sukunaHP.Value = sukunaCurrentHp; // Update ProgressBar
+                sukunaCurrentHp -= 15;
+                if (sukunaCurrentHp < 0) sukunaCurrentHp = 0; 
+                sukunaHP.Value = sukunaCurrentHp; 
             }
         }
 
@@ -616,9 +619,9 @@ namespace Gojo_Fight
 
             if (collision)
             {
-                sukunaCurrentHp -= 5; // Reduce Sukuna's HP
-                if (sukunaCurrentHp < 0) sukunaCurrentHp = 0; // Prevent negative HP
-                sukunaHP.Value = sukunaCurrentHp; // Update ProgressBar
+                sukunaCurrentHp -= 5; 
+                if (sukunaCurrentHp < 0) sukunaCurrentHp = 0; 
+                sukunaHP.Value = sukunaCurrentHp;
             }
         }
 
@@ -628,9 +631,9 @@ namespace Gojo_Fight
 
             if (collision)
             {
-                sukunaCurrentHp -= 8; // Reduce Sukuna's HP
-                if (sukunaCurrentHp < 0) sukunaCurrentHp = 0; // Prevent negative HP
-                sukunaHP.Value = sukunaCurrentHp; // Update ProgressBar
+                sukunaCurrentHp -= 8; 
+                if (sukunaCurrentHp < 0) sukunaCurrentHp = 0; 
+                sukunaHP.Value = sukunaCurrentHp; 
             }
         }
 
