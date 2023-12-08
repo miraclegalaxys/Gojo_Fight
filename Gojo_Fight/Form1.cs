@@ -18,7 +18,7 @@ namespace Gojo_Fight
 
 
         int gojoX = 0;
-        int gojoY = 350;
+        int gojoY = 250;
 
         int shotmurasakiX;
         int shotmurasakiY;
@@ -44,7 +44,7 @@ namespace Gojo_Fight
 
 
         int sukunaX = 1450;
-        int sukunaY = 500;
+        int sukunaY = 400;
 
         int gojoWidth = 500;
         int gojoHeight = 800;
@@ -339,7 +339,7 @@ namespace Gojo_Fight
         {
             gojoHP = new ProgressBar();
             gojoName = new Label();
-            gojoFont = new Font("Arial", 12, FontStyle.Regular);
+            gojoFont = new Font("Arial", 20, FontStyle.Regular);
             gojoHP.Minimum = 0;
             gojoHP.Maximum = 100;
             gojoHP.Value = 100;
@@ -360,13 +360,13 @@ namespace Gojo_Fight
 
             gojoHP.Location = new Point(70, 50);
             gojoName.Location = new Point(70, 100);
-            gojoHP.Size = new Size(850, 30);
-            gojoName.Size = new Size(190, 40);
+            gojoHP.Size = new Size(800, 30);
+            gojoName.Size = new Size(170, 32);
 
 
             sukunaHP = new ProgressBar();
             sukunaName = new Label();
-            sukunaFont = new Font("Arial", 12, FontStyle.Regular);
+            sukunaFont = new Font("Arial", 20, FontStyle.Regular);
             sukunaHP.Minimum = 0;
             sukunaHP.Maximum = 1000;
             sukunaHP.Value = 1000;
@@ -381,10 +381,10 @@ namespace Gojo_Fight
             autoIncreaseSukunaTimer.Tick += AutoIncreaseTimer_Tick;
             autoIncreaseSukunaTimer.Start();
 
-            sukunaHP.Location = new Point(1080, 50);
-            sukunaName.Location = new Point(1680, 100);
-            sukunaHP.Size = new Size(850, 30);
-            sukunaName.Size = new Size(250, 40);
+            sukunaHP.Location = new Point(1000, 50);
+            sukunaName.Location = new Point(1430, 100);
+            sukunaHP.Size = new Size(800, 30);
+            sukunaName.Size = new Size(370, 32);
 
             Controls.Add(gojoHP);
             Controls.Add(gojoName);
@@ -411,8 +411,8 @@ namespace Gojo_Fight
                 return;
             }
 
-            SukunaReverse(20);
-            IncrementGojoHealth(2);
+            SukunaReverse(10);
+            IncrementGojoHealth(1);
         }
 
 
@@ -423,7 +423,16 @@ namespace Gojo_Fight
                 ((System.Windows.Forms.Timer)sender).Stop();
                 return;
             }
-            DecrementGojoHealth(10);
+
+            if (!isKeyEHeld)  // Only decrement health if 'E' is not being held
+            {
+                if (gojoCurrentHp <= 0 || sukunaCurrentHp <= 0)
+                {
+                    ((System.Windows.Forms.Timer)sender).Stop();
+                    return;
+                }
+                DecrementGojoHealth(10);
+            }
         }
 
 
@@ -613,8 +622,8 @@ namespace Gojo_Fight
             shotmurasaki = Image.FromFile("gojo\\shotmurasaki.png");
             shotmurasakiX = gojoX + gojoWidth;
             shotmurasakiY = 200;
-            shotmurasakiWidth = 1000; 
-            shotmurasakiHeight = 1000; 
+            shotmurasakiWidth = 750; 
+            shotmurasakiHeight = 750; 
             isMurasakiMoving = true;
             murasakiMoveTimer.Start(); 
         }
@@ -623,7 +632,7 @@ namespace Gojo_Fight
         {
             shotao = Image.FromFile("gojo\\shotao.png");
             shotaoX = gojoX + 350;
-            shotaoY = gojoY;
+            shotaoY = 400;
             shotaoWidth = 250;
             shotaoHeight = 270;
             isAoMoving = true;
@@ -633,7 +642,7 @@ namespace Gojo_Fight
         {
             shotarka = Image.FromFile("gojo\\shotarka.png");
             shotarkaX = gojoX + 350;
-            shotarkaY = gojoY;
+            shotarkaY = 400;
             shotarkaWidth = 250;
             shotarkaHeight = 270;
             isArkaMoving = true;
@@ -646,7 +655,7 @@ namespace Gojo_Fight
 
             if (collision)
             {
-                sukunaCurrentHp -= 15;
+                sukunaCurrentHp -= 20;
                 if (sukunaCurrentHp < 0) sukunaCurrentHp = 0; 
                 sukunaHP.Value = sukunaCurrentHp; 
             }
@@ -658,7 +667,7 @@ namespace Gojo_Fight
 
             if (collision)
             {
-                sukunaCurrentHp -= 5; 
+                sukunaCurrentHp -= 8; 
                 if (sukunaCurrentHp < 0) sukunaCurrentHp = 0; 
                 sukunaHP.Value = sukunaCurrentHp;
               //  isShotaoVisible = false;
@@ -672,7 +681,7 @@ namespace Gojo_Fight
 
             if (collision)
             {
-                sukunaCurrentHp -= 8; 
+                sukunaCurrentHp -= 10; 
                 if (sukunaCurrentHp < 0) sukunaCurrentHp = 0; 
                 sukunaHP.Value = sukunaCurrentHp; 
                // isShotarkaVisible = false;

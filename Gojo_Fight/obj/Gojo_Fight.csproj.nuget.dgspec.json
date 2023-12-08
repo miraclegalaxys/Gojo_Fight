@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\project263OOP\\Game\\gojo_fight\\Gojo_Fight\\Gojo_Fight.csproj": {}
+    "D:\\OOP263\\Gojo_Fight\\Gojo_Fight.csproj": {}
   },
   "projects": {
-    "C:\\project263OOP\\Game\\gojo_fight\\Gojo_Fight\\Gojo_Fight.csproj": {
+    "D:\\OOP263\\Gojo_Fight\\Gojo_Fight.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\project263OOP\\Game\\gojo_fight\\Gojo_Fight\\Gojo_Fight.csproj",
+        "projectUniqueName": "D:\\OOP263\\Gojo_Fight\\Gojo_Fight.csproj",
         "projectName": "Gojo_Fight",
-        "projectPath": "C:\\project263OOP\\Game\\gojo_fight\\Gojo_Fight\\Gojo_Fight.csproj",
-        "packagesPath": "C:\\Users\\miracle\\.nuget\\packages\\",
-        "outputPath": "C:\\project263OOP\\Game\\gojo_fight\\Gojo_Fight\\obj\\",
+        "projectPath": "D:\\OOP263\\Gojo_Fight\\Gojo_Fight.csproj",
+        "packagesPath": "C:\\Users\\galax\\.nuget\\packages\\",
+        "outputPath": "D:\\OOP263\\Gojo_Fight\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\miracle\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\galax\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
