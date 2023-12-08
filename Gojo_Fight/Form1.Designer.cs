@@ -28,20 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            GameTimer = new System.Windows.Forms.Timer(components);
             SuspendLayout();
-            // 
-            // GameTimer
-            // 
-            GameTimer.Interval = 20;
-            GameTimer.Tick += GameTimerEvent;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1997, 1103);
+            ClientSize = new Size(1036, 497);
+            Margin = new Padding(2, 1, 2, 1);
             Name = "Form1";
             Text = "Form1";
             Paint += FormPaintEvent;
@@ -51,7 +45,5 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Timer GameTimer;
     }
 }
