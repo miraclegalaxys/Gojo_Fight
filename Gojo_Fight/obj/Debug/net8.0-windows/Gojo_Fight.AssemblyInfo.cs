@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Gojo_Fight")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6a6333e632eb5f6f901754a86c85e9c7baafac27")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a86ff997bf3186427ccfaa776aa1251dde8dfffd")]
 [assembly: System.Reflection.AssemblyProductAttribute("Gojo_Fight")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Gojo_Fight")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -146,7 +146,7 @@ namespace Gojo_Fight
                 using (SolidBrush goldBrush = new SolidBrush(Color.Gold))
                 {
                     // Check Sukuna's HP
-                    if (sukunaCurrentHp <= 0)
+                    if (sukunaCurrentHp == 0)
                     {
                         string winText = "WIN";
                         SizeF textSize = e.Graphics.MeasureString(winText, font);
@@ -480,7 +480,10 @@ namespace Gojo_Fight
             gojoCurrentHp -= decrement;
 
             if (gojoCurrentHp < gojoHP.Minimum)
+            {
                 gojoCurrentHp = gojoHP.Minimum;
+                this.Invalidate(); 
+            }
 
             if (gojoCurrentHp > gojoHP.Maximum)
                 gojoCurrentHp = gojoHP.Maximum;
